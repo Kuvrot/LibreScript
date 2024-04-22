@@ -4,14 +4,39 @@ var Config = {};
 		Config.pageMarginBottomInCentimeter = 2; // must match 'padding-bottom' and 'margin-bottom' from 'css/sheets-of-paper-*.css' being used
 
 var tgpy = 0; //This is the variable that will be used to determine which typography to use
-
 var editor = document.getElementById("document");
-
 var currentFormat = document.getElementById("currentFormat");
+
+const timer = new Date();
+var hh = timer.getHours();
+var mm = timer.getMinutes();
 
 window.addEventListener("DOMContentLoaded", function () {
     applyPageBreaks();
+    setFormat(0);
+    setTime();
+   
 });
+
+
+function setTime () {
+  
+    const today = new Date();
+    let h = today.getHours() - hh;
+    let m = today.getMinutes() - mm;
+    let s = today.getSeconds();
+
+    m = checkTime(m);
+    s = checkTime(s);
+    h = checkTime(h);
+    document.getElementById("time").innerHTML =  h + ":" + m + ":" + s;
+    setTimeout(setTime, 1000);
+}
+
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
 
 function setTypography (index){
 
@@ -24,7 +49,6 @@ function setTypography (index){
                 editor.focus(); break;
 
     }
-
 }
 
 function setFormat (index) {
@@ -33,10 +57,16 @@ function setFormat (index) {
 
         case 0: currentFormat.innerHTML = "Act"; break;
         case 1: currentFormat.innerHTML = "Scene title"; break;
-
+        case 2: currentFormat.innerHTML = "Action";break;
+        case 3: currentFormat.innerHTML = "Character";break;
+        case 4: currentFormat.innerHTML = "Dialogue";break;
+        case 5: currentFormat.innerHTML = "Transition";break;
+        case 6: currentFormat.innerHTML = "Take";break;
+        case 7: currentFormat.innerHTML = "Text"; break;
     }
 
-
+    document.getElementById("pageNumber").innerHTML = document.getElementsByClassName("page").length;
+    
 }
 
 function applyPageBreaks() {
@@ -59,7 +89,7 @@ function exportScript (){
     var content = document.getElementById('document').innerHTML;
     var doc = window.open('');
     doc.document.write('<!DOCTYPE html> <html><head><title>Preview</title> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">'
-    + '<link rel="stylesheet" type="text/css" href="css/sheets-of-paper-a4.css"> </head><body>' + content +  '</body></html>');
+    + '<link rel="stylesheet" type="text/css" href="css/sheets-of-paper-a4.css"> <link rel="stylesheet" href="css/style.css"></head><body><div class="document">' + content + '</document> </body></html>');
     
       setTimeout(function() {
         doc.print();
