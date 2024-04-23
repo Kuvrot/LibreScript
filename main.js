@@ -64,12 +64,15 @@ function setFormat (index) {
         case 0: currentFormat.innerHTML = "Act"; break;
         case 1: currentFormat.innerHTML = "Scene title"; break;
         case 2: currentFormat.innerHTML = "Action";break;
-        case 3: currentFormat.innerHTML = "Character";break;
-        case 4: currentFormat.innerHTML = "Dialogue";break;
+        case 3: currentFormat.innerHTML = "Character"; command = "backColor"; break;
+        case 4: currentFormat.innerHTML = "Dialogue"; break;
         case 5: currentFormat.innerHTML = "Transition";break;
         case 6: currentFormat.innerHTML = "Take";break;
         case 7: currentFormat.innerHTML = "Text"; break;
     }
+
+    document.execCommand(command);
+    editor.focus();
 
     document.getElementById("pageNumber").innerHTML = document.getElementsByClassName("page").length; 
 }
