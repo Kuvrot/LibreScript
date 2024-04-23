@@ -15,7 +15,6 @@ window.addEventListener("DOMContentLoaded", function () {
     applyPageBreaks();
     setFormat(0);
     setTime();
-   
 });
 
 
@@ -41,14 +40,21 @@ function checkTime(i) {
 function setTypography (index){
 
     tgpy = index;
-
+    let command = "";
+    var t = document.getElementById("page");
     switch (tgpy){
-
-        case 1: document.getElementById("bold").classList.add("active");
-                document.execCommand("bold");
-                editor.focus(); break;
-
+        case 1: command = "bold";
+                break;
+        case 2: command = "italic";
+                break;
+        case 3: command = "underline";
+                break;               
     }
+    
+    t = document.getElementById(command);
+    t.classList.contains("active") ? t.classList.remove("active") : t.classList.add("active");  
+    document.execCommand(command);
+    editor.focus();
 }
 
 function setFormat (index) {
@@ -65,8 +71,7 @@ function setFormat (index) {
         case 7: currentFormat.innerHTML = "Text"; break;
     }
 
-    document.getElementById("pageNumber").innerHTML = document.getElementsByClassName("page").length;
-    
+    document.getElementById("pageNumber").innerHTML = document.getElementsByClassName("page").length; 
 }
 
 function applyPageBreaks() {
