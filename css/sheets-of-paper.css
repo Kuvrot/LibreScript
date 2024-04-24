@@ -10,7 +10,7 @@ html, body {
 	/* Reset the document's padding values */
 	padding: 0;
 	/* Use the platform's native font as the default */
-	font-family: "Roboto", -apple-system, "San Francisco", "Segoe UI", "Helvetica Neue", sans-serif;
+	font-family: "Roboto", -apple-system, "San Francisco", "Segoe UI", "Helvetica Neue", sans-serif, 'Courier New', Courier, monospace;
 	/* Define a reasonable base font size */
 	font-size: 12pt;
 
@@ -93,7 +93,13 @@ p {
 /* For adjacent paragraph tags */
 p + p {
 	/* Restore the spacing between the paragraphs */
-	margin-top: 0.5cm;
+	margin-top: 0.01cm;
+}
+
+.cover {
+
+	margin-top:0.5cm;
+
 }
 /* For links in the document */
 a {

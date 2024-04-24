@@ -16,9 +16,9 @@
 
 	/* Reflect the actual page margin/padding on paper in the screen rendering (must match margin from @page rule) */
 	padding-left: 2cm;
-	padding-top: 2cm;
+	padding-top: 1.3cm;
 	padding-right: 2cm;
-	padding-bottom: 2cm;
+	padding-bottom: 2.5cm;
 }
 /* Use CSS Paged Media to switch from continuous documents to sheet-like documents with separate pages */
 @page {
@@ -29,7 +29,7 @@
 
 	/* Margin per single side of the page */
 	margin-left: 2cm;
-	margin-top: 2cm;
+	margin-top: 1.3cm;
 	margin-right: 2cm;
-	margin-bottom: 2cm;
+	margin-bottom: 2.5cm;
 }

@@ -1,4 +1,13 @@
 .document{
     font-family: 'Courier New', Courier, monospace;
     font-size: 12pt;
+    
+}
+
+u {
+    text-decoration: none;
+    padding-left: 6.1cm;
+    
+    text-align: justify;
+    text-justify: inter-word;
 }

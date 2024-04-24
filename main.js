@@ -13,7 +13,7 @@ var mm = timer.getMinutes();
 
 window.addEventListener("DOMContentLoaded", function () {
     applyPageBreaks();
-    setFormat(0);
+    setFormat(3);
     setTime();
 });
 
@@ -29,6 +29,7 @@ function setTime () {
     s = checkTime(s);
     h = checkTime(h);
     document.getElementById("time").innerHTML =  h + ":" + m + ":" + s;
+    document.getElementById("pageNumber").innerHTML = document.getElementsByClassName("page").length; 
     setTimeout(setTime, 1000);
 }
 
@@ -65,7 +66,7 @@ function setFormat (index) {
         case 1: currentFormat.innerHTML = "Scene title"; break;
         case 2: currentFormat.innerHTML = "Action";break;
         case 3: currentFormat.innerHTML = "Character"; command = "justifyCenter"; break;
-        case 4: currentFormat.innerHTML = "Dialogue"; break;
+        case 4: currentFormat.innerHTML = "Dialogue"; command = "underline"; break;
         case 5: currentFormat.innerHTML = "Transition";break;
         case 6: currentFormat.innerHTML = "Take";break;
         case 7: currentFormat.innerHTML = "Text"; break;
@@ -73,8 +74,6 @@ function setFormat (index) {
 
     document.execCommand(command);
     editor.focus();
-
-    document.getElementById("pageNumber").innerHTML = document.getElementsByClassName("page").length; 
 }
 
 function applyPageBreaks() {
