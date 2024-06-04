@@ -1,7 +1,20 @@
 body{
-    font-family: "Courier New", Courier;
+    font-family: Courier;
     font-size: 12pt;
 }
+
+@media print {
+    .pagebreak { page-break-before: always; } /* page-break-after works, as well */
+}
+
+p{
+    line-height: 1;
+}
+
+.cover{
+    padding-top:50%; 
+}
+
 div{
     margin-bottom: 2.5cm;
     margin-top: 1.5cm;

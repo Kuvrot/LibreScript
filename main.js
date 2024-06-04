@@ -18,10 +18,15 @@ window.addEventListener("DOMContentLoaded", function () {;
 
 //Syntax
 var syntax = {
-    "-":"<p style='margin-left:10.4cm;'>",
-   "_":"<p style='margin-left:6.8cm; margin-right:6.1cm;'>",
+    "-":"<p style='margin-left:9cm;'>",
+   "_":"<p style='margin-left:6.8cm; padding:0; margin-right:6.1cm;'>",
    "=": "<p style='margin-left:4.3cm;'>",
    "&": "<p style='margin-left:2.5cm;'>",
+   "title:": "<p style='text-align:center;' class='cover'>",
+   "subtitle:": "<p style='text-align:center;'>",
+   "{": "<p style='margin-left:8.6cm;'>(",
+   "}": ")</p>",
+   "<<<": "<div class='pagebreak'> </div>",
    "\n": "<br>"
 };
 
@@ -29,7 +34,7 @@ var docContent;
 
 function updateDivContent() {
     docContent = document.querySelector('textarea').value;
-    var t = docContent.replace(/-|_|=|&|\n/gi, function(matched){
+    var t = docContent.replace(/-|_|=|&|title:|subtitle:|{|}|<<<|\n/gi, function(matched){
         return syntax[matched];
       });
     document.getElementById('result').innerHTML = t;
