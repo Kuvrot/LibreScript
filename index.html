@@ -6,7 +6,7 @@
 		<meta name="description" content="Screenwriting software for writing and formatting scripts.">
 		<title>LibreScript</title>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="css/sheets-of-paper-usletter.css">
+		
 		<link rel="stylesheet" href="css/style.css">
 	</head>	
 	<body>
@@ -34,7 +34,7 @@
 					  <li><button class="dropdown-item" type="button">New script</button></li>
 					  <li><button class="dropdown-item" type="button">Save script</button></li>
 					  <li><button class="dropdown-item" type="button">Open script</button></li>
-					  <li><button class="dropdown-item" onclick="exportScript()" type="button">Export script <code>(PDF)</code></button></li>
+					  <li><button class="dropdown-item" onclick="exportPDF()" type="button">Export script <code>(PDF)</code></button></li>
 					</ul>
 				</div>
 
@@ -62,7 +62,6 @@
 	
 			<!-- Right elements -->
 			<div class="col-lg-5 d-flex justify-content-center justify-content-md-end align-items-center">
-				
 			</div>
 			<!-- Right elements -->
 			</div>
@@ -131,26 +130,14 @@
 		<!-- Navbar -->
 	</header>
 
-	<div id="document" class="document">
-		<!--Main Navigation-->
-		<!--Main layout-->
-
-		<div class="page" contenteditable="true" style="text-align: center;">
-			<div style="margin-top: 65%;">
-				<p class="cover">Title</p>
-				<p class="cover">By autor</p>
-				<p class="cover">Extra ...</p>
-			</div>
+	<div id="document" class="document row" style="background-color: white;">
+		<textarea name="" id="input" class="col" oninput="updateDivContent()">			
+		</textarea>
+		<div id="result" style="background-color: white; padding-top:1%;" class="col shadow">
 		</div>
-		<div class="page" contenteditable="true">
-			<p>Second element</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		</div>
+	</div>
 
-		<script src="main.js"></script>
-		</div>
-
-		<footer class="bg-white text-center sticky-bottom shadow-lg text-lg-start"> 
+		<footer class="bg-white text-center sticky-bottom shadow-lg fixed-bottom text-lg-start"> 
 			<!-- Copyright -->
 			<div class="text-left p-3 d-flex">
 				<p class="row" style="padding-left: 2.5%; padding-right:2%;" id="pageNumber">pages</p> <p class="row">Pages</p>
@@ -158,6 +145,7 @@
 			</div>
 			<!-- Copyright -->
 		</footer>
+		<script src="main.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 		</body>
 </html>

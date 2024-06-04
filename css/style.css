@@ -4,10 +4,13 @@
     
 }
 
-u {
-    text-decoration: none;
-    padding-left: 6.1cm;
-    
-    text-align: justify;
-    text-justify: inter-word;
+a{
+    text-decoration:none;
+    color:black;
+}
+
+textarea{
+    height: 29.7cm;
+    width:50%;
+    margin-left:1%;
 }
