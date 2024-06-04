@@ -131,17 +131,16 @@
 	</header>
 
 	<div id="document" class="document row" style="background-color: white;">
-		<textarea name="" id="input" class="col" oninput="updateDivContent()">			
+		<textarea name="" id="input" class="col" oninput="updateDivContent()" onclick="updateDivContent()">			
 		</textarea>
 		<div id="result" style="background-color: white; padding-top:1%;" class="col shadow">
 		</div>
 	</div>
 
-		<footer class="bg-white text-center sticky-bottom shadow-lg fixed-bottom text-lg-start"> 
+		<footer class="bg-white text-center sticky-bottom shadow fixed-bottom"> 
 			<!-- Copyright -->
-			<div class="text-left p-3 d-flex">
-				<p class="row" style="padding-left: 2.5%; padding-right:2%;" id="pageNumber">pages</p> <p class="row">Pages</p>
-				<p class="row" style="padding-left: 2.5%; padding-right:2%;" >Consideration: </p> <p class="row" id="time">00:00:00</p>
+			<div class="text-left d-flex" style="padding-top: 1%;">
+				<p class="row" style="padding-left: 2.5%; padding-right:2.5%;" >Consideration: </p> <p class="row" id="time">00:00:00</p>
 			</div>
 			<!-- Copyright -->
 		</footer>
