@@ -1,5 +1,5 @@
 # LibreScript
-Open source screenwriting software for writing and formatting scripts.
+Open source screenwriting software. 
 
 ![imagen](https://github.com/Kuvrot/LibreScript/assets/23508114/128d9342-d9f1-48ad-8025-28f96a4788e7)
 
