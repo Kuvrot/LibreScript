@@ -11,18 +11,17 @@ const timer = new Date();
 var hh = timer.getHours();
 var mm = timer.getMinutes();
 
-window.addEventListener("DOMContentLoaded", function () {
-    applyPageBreaks();
-    setFormat(3);
+window.addEventListener("DOMContentLoaded", function () {;
     setTime();
     updateDivContent();
 });
 
 //Syntax
 var syntax = {
-    "-":"<p style='padding-left:10.4cm;'>",
-   "_":"<p style='padding-left:6.8cm; padding-top:0.1%;'>",
-   "=": "<p style='padding-left:4.3cm;'>",
+    "-":"<p style='margin-left:10.4cm;'>",
+   "_":"<p style='margin-left:6.8cm; margin-right:6.1cm;'>",
+   "=": "<p style='margin-left:4.3cm;'>",
+   "&": "<p style='margin-left:2.5cm;'>",
    "\n": "<br>"
 };
 
@@ -30,7 +29,7 @@ var docContent;
 
 function updateDivContent() {
     docContent = document.querySelector('textarea').value;
-    var t = docContent.replace(/-|_|=|\n/gi, function(matched){
+    var t = docContent.replace(/-|_|=|&|\n/gi, function(matched){
         return syntax[matched];
       });
     document.getElementById('result').innerHTML = t;
@@ -99,6 +98,9 @@ function exportPDF () {
 
     var content = document.getElementById("result").innerHTML;
     var result = window.open('');
-    result.document.write('<head><title>LibreScript</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"><link href="css/sheet.css" rel="stylesheet"></head><body><div>'+content+'</div><script>window.print();</script><body/>');
-
+    result.document.write('<head><title>LibreScript</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"><link href="css/sheet.css" rel="stylesheet"></head><body><div>'+content+'</div><script></script><body/>');
+    setTimeout(() => {
+        result.print();
+        result.close();
+    }, 350);
 }
