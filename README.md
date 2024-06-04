@@ -1,10 +1,10 @@
 # LibreScript
-Open source screenwriting software. 
+Open source screenwriting software (Pull requests are welcome!).
 
 ![imagen](https://github.com/Kuvrot/LibreScript/assets/23508114/128d9342-d9f1-48ad-8025-28f96a4788e7)
 
 ## ScriptDown
-LibreScript uses a Markdown like language called ScriptDown and has the following commands:
+LibreScript uses a Markdown-like language called ScriptDown and has the following commands:
 
 - `&` to write the number and title of the screen
 - `=` can be used for action, scene header, plane or description
@@ -13,7 +13,7 @@ LibreScript uses a Markdown like language called ScriptDown and has the followin
 
 ![imagen](https://github.com/Kuvrot/LibreScript/assets/23508114/d25b7fd3-25dd-44b0-97b3-bd69c14b0bf3)
 
-The following example was made with the following text in ScripDown
+The following example was made with the following text in ScriptDown
 ```r
 & 1. SCENE 1
 = A character comes into the room and proceeds to talk
