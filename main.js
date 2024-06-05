@@ -43,9 +43,6 @@ function updateDivContent() {
         return syntax[matched];
       });
     document.getElementById('result').innerHTML = t;
-
-    document.getElementsByClassName('character').innerHTML.toUpperCase();
-
 }
 
 //Consideration clock 
@@ -101,11 +98,41 @@ function exportPDF () {
 }
 
 function saveFile (){
-
+    
+        const data = document.getElementById("input").value;
+        const blob = new Blob([data], { type: 'text/plain' });
+    
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'NewScript.sd';
+    // Append the anchor element to the body
+    document.body.appendChild(a);
+    
+    // Trigger a click event on the anchor element
+    a.click();
+    
+    // Clean up by removing the anchor element
+    document.body.removeChild(a);
 }
 
 function openFile (){
-
+    let input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.sd' , '.anel , .txt , .html';
+    input.onchange = function() {
+      let file = input.files[0];
+  
+      let reader = new FileReader();
+      reader.onload = function(e) {
+        // The contents of the file are accessible here
+        let fileContents = reader.result;
+        document.getElementById("input").value = fileContents;
+  
+        // Perform operations with the file contents
+      };
+      reader.readAsText(file); // Read the file as text
+    };
+    input.click();
 }
 
 
