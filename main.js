@@ -90,20 +90,18 @@ function setTypography (index){
 
 function setFormat (index) {
 
+    var fontName = "";
+
     switch (index){
 
-        case 0: currentFormat.innerHTML = "Act"; break;
-        case 1: currentFormat.innerHTML = "Scene title"; break;
-        case 2: currentFormat.innerHTML = "Action";break;
-        case 3: currentFormat.innerHTML = "Character"; command = "justifyCenter"; break;
-        case 4: currentFormat.innerHTML = "Dialogue"; command = "underline"; break;
-        case 5: currentFormat.innerHTML = "Transition";break;
-        case 6: currentFormat.innerHTML = "Take";break;
-        case 7: currentFormat.innerHTML = "Text"; break;
+        case 0: fontName = "Consolas"; break;
+        case 1: fontName = "Courier new"; break;
+        case 2: fontName = "Hack";break;
+        case 3: fontName = "Arial"; break;
     }
 
-    document.execCommand(command);
-    editor.focus();
+    currentFormat.innerHTML = fontName;    
+    document.getElementById("input").style = "font-family:" + fontName;
 }
 
 function exportPDF () {

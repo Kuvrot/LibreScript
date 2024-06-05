@@ -77,17 +77,13 @@
 			<div class="d-flex">
 				<div class="dropdown"  style="padding-right: 2.5%;">
 					<a class="btn btn-light dropdown-toggle" id="currentFormat" type="button" data-bs-toggle="dropdown">
-					  Act
+					  Select script font
 					</a>
 					<ul class="dropdown-menu" style="text-align: center;">
-					  <li><button class="dropdown-item" type="button" onclick="setFormat(0)">Act</button></li>
-					  <li><button class="dropdown-item" type="button" onclick="setFormat(1)">Scene title</button></li>
-					  <li><button class="dropdown-item" type="button" onclick="setFormat(2)">Action</button></li>
-					  <li><button class="dropdown-item" type="button" onclick="setFormat(3)">Character</button></li>
-					  <li><button class="dropdown-item" type="button" onclick="setFormat(4)">Dialogue</button></li>
-					  <li><button class="dropdown-item" type="button" onclick="setFormat(5)">Transition</button></li>
-					  <li><button class="dropdown-item" type="button" onclick="setFormat(6)">Take</button></li>
-					  <li><button class="dropdown-item" type="button" onclick="setFormat(7)">Text</button></li>
+					  <li><button class="dropdown-item" type="button" onclick="setFormat(0)">Consolas (default)</button></li>
+					  <li><button class="dropdown-item" type="button" onclick="setFormat(1)">Courier new</button></li>
+					  <li><button class="dropdown-item" type="button" onclick="setFormat(2)">monospace</button></li>
+					  <li><button class="dropdown-item" type="button" onclick="setFormat(3)">Arial</button></li>
 					</ul>
 				</div>
 			
@@ -130,8 +126,8 @@
 		<!-- Navbar -->
 	</header>
 
-	<div id="document" class="document row" style="background-color: white;">
-		<textarea name="" id="input" class="col" oninput="updateDivContent()" onclick="updateDivContent()">			
+	<div id="document" class="document row" style="background-color: white; ">
+		<textarea name="" style="font-family: Consolas;" id="input" class="col" oninput="updateDivContent()" onclick="updateDivContent()">			
 		</textarea>
 		<div id="result" style="background-color: white; padding-top:1%;" class="col shadow">
 		</div>
