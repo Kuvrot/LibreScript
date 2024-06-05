@@ -12,6 +12,10 @@ var hh = timer.getHours();
 var mm = timer.getMinutes();
 
 window.addEventListener("DOMContentLoaded", function () {;
+    
+    //Default value
+    document.getElementById("input").value = "title: Script name... \n subtitle: Author name... \n <<<";
+    
     setTime();
     updateDivContent();
 });
@@ -106,7 +110,7 @@ function exportPDF () {
 
     var content = document.getElementById("result").innerHTML;
     var result = window.open('');
-    result.document.write('<head><title>LibreScript</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"><link href="css/sheet.css" rel="stylesheet"></head><body><div>'+content+'</div><script></script><body/>');
+    result.document.write('<head><title>LibreScript</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"><link href="css/sheet.css" rel="stylesheet"></head><body><div style="margin-top:2.5cm;">'+content+'</div><script></script><body/>');
     setTimeout(() => {
         result.print();
         result.close();
