@@ -34,8 +34,9 @@ var syntax = {
    "\n": "<br>"
 };
 
-var docContent; 
 
+//ScriptDown intepreter
+var docContent; 
 function updateDivContent() {
     docContent = document.querySelector('textarea').value;
     var t = docContent.replace(/-|_|=|&|title:|subtitle:|{|}|<<<|\n/gi, function(matched){
@@ -47,6 +48,7 @@ function updateDivContent() {
 
 }
 
+//Consideration clock 
 function setTime () {
   
     const today = new Date();
@@ -68,28 +70,11 @@ function checkTime(i) {
     return i;
 }
 
-function setTypography (index){
+//Header methods
 
-    tgpy = index;
-    let command = "";
-    var t = document.getElementById("page");
-    switch (tgpy){
-        case 1: command = "bold";
-                break;
-        case 2: command = "italic";
-                break;
-        case 3: command = "underline";
-                break;               
-    }
-    
-    t = document.getElementById(command);
-    //t.classList.contains("active") ? t.classList.remove("active") : t.classList.add("active");  
-    document.execCommand(command);
-    editor.focus();
-}
-
+// This sets the font for the scripting div 
+// (change the name of the method to "setFont" in the future)
 function setFormat (index) {
-
     var fontName = "";
 
     switch (index){
@@ -104,8 +89,8 @@ function setFormat (index) {
     document.getElementById("input").style = "font-family:" + fontName;
 }
 
+//File handling
 function exportPDF () {
-
     var content = document.getElementById("result").innerHTML;
     var result = window.open('');
     result.document.write('<head><title>LibreScript</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"><link href="css/sheet.css" rel="stylesheet"></head><body><div style="margin-top:2.5cm;">'+content+'</div><script></script><body/>');
@@ -114,3 +99,14 @@ function exportPDF () {
         result.close();
     }, 350);
 }
+
+function saveFile (){
+
+}
+
+function openFile (){
+
+}
+
+
+
