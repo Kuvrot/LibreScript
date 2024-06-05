@@ -18,8 +18,8 @@ window.addEventListener("DOMContentLoaded", function () {;
 
 //Syntax
 var syntax = {
-    "-":"<p style='margin-left:9cm;'>",
-   "_":"<p style='margin-left:6.8cm; padding:0; margin-right:6.1cm;'>",
+    "-":"<p style='margin-left:9cm;' class='character'>",
+   "_":"<p style='margin-left:6.8cm; text-decoration:none; padding:0; margin-right:6.1cm;'>",
    "=": "<p style='margin-left:4.3cm;'>",
    "&": "<p style='margin-left:2.5cm;'>",
    "title:": "<p style='text-align:center;' class='cover'>",
@@ -39,6 +39,8 @@ function updateDivContent() {
       });
     document.getElementById('result').innerHTML = t;
 
+    document.getElementsByClassName('character').innerHTML.toUpperCase();
+
 }
 
 function setTime () {
@@ -52,8 +54,10 @@ function setTime () {
     s = checkTime(s);
     h = checkTime(h);
     document.getElementById("time").innerHTML =  h + ":" + m + ":" + s;
-    document.getElementById("pageNumber").innerHTML = document.getElementsByClassName("page").length; 
-    setTimeout(setTime, 1000);
+    //document.getElementById("pageNumber").innerHTML = document.getElementsByClassName("page").length; 
+    setTimeout(() => {
+        setTime();
+    }, 1000);
 }
 
 function checkTime(i) {
