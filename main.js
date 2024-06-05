@@ -54,7 +54,6 @@ function setTime () {
     s = checkTime(s);
     h = checkTime(h);
     document.getElementById("time").innerHTML =  h + ":" + m + ":" + s;
-    //document.getElementById("pageNumber").innerHTML = document.getElementsByClassName("page").length; 
     setTimeout(() => {
         setTime();
     }, 1000);
