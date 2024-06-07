@@ -29,3 +29,7 @@ textarea{
     word-wrap: break-word;
     overflow: hidden;
 }
+
+u{
+    text-decoration: none;
+}

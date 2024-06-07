@@ -22,27 +22,38 @@ window.addEventListener("DOMContentLoaded", function () {;
 
 //ScriptDown syntax
 var syntax = {
-    "-":"<p style='margin-left:9cm;' class='character'>",
+    "-":"<p style='margin-left:10.4cm;'><u class='character'>",
    "_":"<p style='margin-left:6.8cm; text-decoration:none; padding:0; margin-right:6.1cm;'>",
    "=": "<p style='margin-left:4.3cm;'>",
-   "&": "<p style='margin-left:2.5cm;'>",
+   "#": "<p style='margin-left:2.5cm;' class='scenes'> <strong>",
    "title:": "<p style='text-align:center;' class='cover'>",
    "subtitle:": "<p style='text-align:center;'>",
+   "&" : "<p style='margin-left:15.2cm;'>",
    "{": "<p style='margin-left:8.6cm;'>(",
    "}": ")</p>",
-   "<<<": "<div class='pagebreak'> </div>",
-   "\n": "<br>"
+   "<<<": "<div class='pagebreak'></div>",
+   "\n": "</strong></u><br>"
 };
 
 
-//ScriptDown intepreter
-var docContent; 
+//ScriptDown interpreter
+var docContent;
+var scenesCounter; 
 function updateDivContent() {
     docContent = document.querySelector('textarea').value;
-    var t = docContent.replace(/-|_|=|&|title:|subtitle:|{|}|<<<|\n/gi, function(matched){
+    var t = docContent.replace(/-|_|=|#|title:|subtitle:|&|{|}|<<<|\n/gi, function(matched){
         return syntax[matched];
       });
+    
     document.getElementById('result').innerHTML = t;
+    
+    //upper case characters
+    let elements = document.getElementsByClassName("character");
+    for (let i = 0; i < elements.length; i++) {
+        let text = elements[i].innerHTML;
+        let result = text.toUpperCase();
+        elements[i].innerHTML = result;
+    }    
 }
 
 //Consideration clock 
