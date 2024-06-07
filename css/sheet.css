@@ -11,6 +11,7 @@ p{
     line-height: 1;
 }
 
+/* This is so the title of the script will be in the center of the page when printing */
 .cover{
     padding-top:50%; 
 }
@@ -18,4 +19,6 @@ p{
 div{
     margin-bottom: 2.5cm;
     margin-top: 1.5cm;
+    word-wrap: break-word;
+    overflow: hidden;
 }

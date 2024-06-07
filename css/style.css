@@ -13,12 +13,19 @@ a{
     color:black;
 }
 
+/* page brak implementation when detects <<< */
 @media print {
     .pagebreak { page-break-before: always; } /* page-break-after works, as well */
 }
 
 textarea{
     height: 29.7cm;
-    width:50%;
     margin-left:1%;
+    resize: none;
+}
+
+#result{
+    resize: none;
+    word-wrap: break-word;
+    overflow: hidden;
 }

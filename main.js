@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", function () {;
     updateDivContent();
 });
 
-//Syntax
+//ScriptDown syntax
 var syntax = {
     "-":"<p style='margin-left:9cm;' class='character'>",
    "_":"<p style='margin-left:6.8cm; text-decoration:none; padding:0; margin-right:6.1cm;'>",
