@@ -8,17 +8,18 @@ LibreScript uses a Markdown-like language called ScriptDown and has the followin
 - `title:` for writing the Title of the story
 - `subtitle: ` for writing subtitles in the cover
 - `<<<` to manually make a pagebreak
-- `&` to write the number and title of the screen
+- `#` to write the number and title of the screen
 - `=` can be used for action, scene header, plane or description
 - `-` to write the character name
 - `_` to write the dialogue of the character
 - `{` and `}` for parenthesis direction
+- `&` for transitions
 
 ![imagen](https://github.com/Kuvrot/LibreScript/assets/23508114/d25b7fd3-25dd-44b0-97b3-bd69c14b0bf3)
 
 The following example was made with the following text in ScriptDown
 ```r
-& 1. SCENE 1
+# 1. SCENE 1
 = A character comes into the room and proceeds to talk
 - CHARACTER
 _ I am a character, and this is my dialogue.
