@@ -14,7 +14,7 @@ var mm = timer.getMinutes();
 window.addEventListener("DOMContentLoaded", function () {;
     
     //Default value
-    document.getElementById("input").value = "title: Script name... \n subtitle: Author name... \n <<<";
+    document.getElementById("input").value = "title: Script name... \n subtitle: Author name... \n <<< \n # scene header \n = this is an action \n % character \n %% this is a dialogue";
     
     setTime();
     updateDivContent();
@@ -22,10 +22,10 @@ window.addEventListener("DOMContentLoaded", function () {;
 
 //ScriptDown syntax
 var syntax = {
-    "-":"<p style='margin-left:10.4cm;'><u class='character'>",
-   "_":"<p style='margin-left:6.8cm; text-decoration:none; padding:0; margin-right:6.1cm;'>",
+   "%%":"<p style='margin-left:6.8cm; text-decoration:none; padding:0; margin-right:6.1cm;'>",
+   "%":"<p style='margin-left:10.4cm;'><u class='character'>",
    "=": "<p style='margin-left:4.3cm;'>",
-   "#": "<p style='margin-left:2.5cm;' class='scenes'> <strong>",
+   "#": "<p style='margin-left:2.5cm;'> <strong><u class='scenes'>",
    "title:": "<p style='text-align:center;' class='cover'>",
    "subtitle:": "<p style='text-align:center;'>",
    "&" : "<p style='margin-left:15.2cm;'>",
@@ -41,7 +41,7 @@ var docContent;
 var scenesCounter; 
 function updateDivContent() {
     docContent = document.querySelector('textarea').value;
-    var t = docContent.replace(/-|_|=|#|title:|subtitle:|&|{|}|<<<|\n/gi, function(matched){
+    var t = docContent.replace(/%%|%|=|#|title:|subtitle:|&|{|}|<<<|\n/gi, function(matched){
         return syntax[matched];
       });
     
@@ -53,7 +53,16 @@ function updateDivContent() {
         let text = elements[i].innerHTML;
         let result = text.toUpperCase();
         elements[i].innerHTML = result;
-    }    
+    }  
+    
+     //upper case characters
+     let scenes = document.getElementsByClassName("scenes");
+     for (let i = 0; i < scenes.length; i++) {
+         let text = scenes[i].innerHTML;
+         let result = text.toUpperCase();
+         let n = i + 1;
+         scenes[i].innerHTML = n + ". " + result;
+     }
 }
 
 //Consideration clock 
