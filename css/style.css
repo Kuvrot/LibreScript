@@ -19,12 +19,13 @@ a{
 }
 
 textarea{
-    height: 29.7cm;
+    min-height: 29.7cm;
+    height: auto;
     margin-left:1%;
-    resize: none;
 }
 
 #result{
+    max-width: 29.7cm;
     resize: none;
     word-wrap: break-word;
     overflow: hidden;
