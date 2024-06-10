@@ -39,7 +39,15 @@ var syntax = {
 //ScriptDown interpreter
 var docContent;
 var scenesCounter; 
+
+//
 function updateDivContent() {
+    setTimeout(()=>{
+        updatePreview();
+    },350);
+}
+
+function updatePreview (){
     docContent = document.querySelector('textarea').value;
     var t = docContent.replace(/%%|%|=|#|title:|subtitle:|&|{|}|<<<|\n/gi, function(matched){
         return syntax[matched];

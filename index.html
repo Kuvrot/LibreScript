@@ -13,7 +13,6 @@
 	<body>
 	<!--Main Navigation-->
 	<header class="mb-4 sticky-top">
-		<!-- Jumbotron -->
 		<div class="p-3 text-center bg-white border-bottom">
 		<div class="container-fluid">
 			<div class="row">
@@ -83,8 +82,7 @@
 			</div>
 		</div>
 		</div>
-		<!-- Jumbotron -->
-	
+
 		<!-- Navbar -->
 		<nav class="navbar navbar-expand-lg navbar-light shadow bg-white d-none d-lg-block">
 		<!-- Container wrapper -->
@@ -142,12 +140,12 @@
 		<!-- Navbar -->
 	</header>
 	<div id="document" class="document row" style="background-color: white; ">
-		<textarea name="" style="font-family: Consolas;" id="input" class="col" oninput="updateDivContent()" onclick="updateDivContent()">			
+		<!-- 																								All this atributes improve the textarea performance -->
+		<textarea name="" id="input" class="col" oninput="updateDivContent()" onclick="updateDivContent()" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" ng-model-options="{ updateOn: 'blur' }">			
 		</textarea>
 		<div id="result" over style="background-color: white; padding-top:1%;" class="col shadow">
 		</div>
 	</div>
-
 		<footer class="bg-white expand sticky-bottom shadow fixed-bottom"> 
 			<div class="d-flex" style="padding-top: 1%;">
 				<p class="row text-left" style="padding-left: 2.5%; padding-right:2.5%;" >Consideration: </p> <p class="row" id="time">00:00:00</p>
