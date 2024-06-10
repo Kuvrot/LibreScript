@@ -10,8 +10,8 @@ LibreScript uses a markup language called ScriptDown and has the following comma
 - `<<<` to manually make a page-break
 - `#` to write the scene header
 - `=` can be used for action, scene header, plane or description
-- `%` to write the character name
-- `%%` to write the dialogue of the character
+- `--` to write the character name
+- `_` to write the dialogue of the character
 - `{` and `}` for parenthesis direction
 - `&` for transitions
 
@@ -21,8 +21,8 @@ The previous example was made with the following text in ScriptDown
 ```r
 # 1. SCENE 1
 = A character comes into the room and proceeds to talk
-% CHARACTER
-%% I am a character, and this is my dialogue.
+-- CHARACTER
+_ I am a character, and this is my dialogue.
 ```
 
 This is a code to make a simple cover:
