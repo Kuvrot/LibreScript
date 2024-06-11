@@ -23,6 +23,7 @@ window.addEventListener("DOMContentLoaded", function () {;
 //ScriptDown syntax
 var syntax = {
    "_":"<p style='margin-left:6.8cm; text-decoration:none; padding:0; margin-right:6.1cm;'>",
+   "---":"<p style='margin-left:6.8cm; text-decoration:none; padding:0; margin-right:6.1cm;'>",
    "--":"<p style='margin-left:10.4cm;'><u class='character'>",
    "=": "<p style='margin-left:4.3cm;'>",
    "#": "<p style='margin-left:2.5cm;'> <strong><u class='scenes'>",
@@ -44,12 +45,12 @@ var scenesCounter;
 function updateDivContent() {
     setTimeout(()=>{
         updatePreview();
-    },350);
+    }, 60);
 }
 
 function updatePreview (){
     docContent = document.querySelector('textarea').value;
-    var t = docContent.replace(/_|--|=|#|title:|subtitle:|&|{|}|<<<|\n/gi, function(matched){
+    var t = docContent.replace(/_|---|--|=|#|title:|subtitle:|&|{|}|<<<|\n/gi, function(matched){
         return syntax[matched];
       });
     
