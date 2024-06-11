@@ -15,7 +15,8 @@ LibreScript uses a markup language called ScriptDown and has the following comma
 - `{` and `}` for parenthesis direction
 - `&` for transitions
 
-![imagen](https://github.com/Kuvrot/LibreScript/assets/23508114/d25b7fd3-25dd-44b0-97b3-bd69c14b0bf3)
+![imagen](https://github.com/Kuvrot/LibreScript/assets/23508114/3ed04eb8-9b75-4341-be6b-de3f2eb43565)
+
 
 The previous example was made with the following text in ScriptDown
 ```r
