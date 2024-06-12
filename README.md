@@ -15,16 +15,20 @@ LibreScript uses a markup language called ScriptDown and has the following comma
 - `{` and `}` for parenthesis direction
 - `&` for transitions
 
-![imagen](https://github.com/Kuvrot/LibreScript/assets/23508114/3ed04eb8-9b75-4341-be6b-de3f2eb43565)
+![imagen](https://github.com/Kuvrot/LibreScript/assets/23508114/0683b712-8458-4338-8b82-e7ec8fd01def)
 
 
-The previous example was made with the following text in ScriptDown
+Example of scriptdown:
 ```r
-# 1. SCENE 1
+# 1. room - ext. - day.
 = A character comes into the room and proceeds to talk
 -- CHARACTER
 _ I am a character, and this is my dialogue.
 ```
+
+![imagen](https://github.com/Kuvrot/LibreScript/assets/23508114/eda65dcd-13af-4aac-b0c9-53e6f0fd1d8e)
+
+
 
 This is a code to make a simple cover:
 ```r
@@ -36,8 +40,6 @@ subtitle: Author name
 And when the script is exported to PDF it would look like this:
 
 ![imagen](https://github.com/Kuvrot/LibreScript/assets/23508114/028ee66f-c0ed-4c57-bea7-26d5fa8b700c)
-
-![imagen](https://github.com/Kuvrot/LibreScript/assets/23508114/90d6fd75-84f6-4db5-be23-98280bcbc7ba)
 
 
 
