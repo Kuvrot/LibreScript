@@ -25,7 +25,7 @@ var syntax = {
    "_":"<p style='margin-left:6.8cm; text-decoration:none; padding:0; margin-right:6.1cm;'>",
    "---":"<p style='margin-left:6.8cm; text-decoration:none; padding:0; margin-right:6.1cm;'>",
    "--":"<p style='margin-left:10.4cm;'><u class='character'>",
-   "=": "<p style='margin-left:4.3cm;'>",
+   "=": "<p style='margin-left:4.3cm; margin-right:3.3cm;'>",
    "#": "<p style='margin-left:2.5cm;'> <strong><u class='scenes'>",
    "title:": "<p style='text-align:center;' class='cover'>",
    "subtitle:": "<p style='text-align:center;'>",
@@ -116,14 +116,24 @@ function setFormat (index) {
 }
 
 //File handling
-function exportPDF () {
+function exportPDF () { 
     var content = document.getElementById("result").innerHTML;
-    var result = window.open('');
-    result.document.write('<head><title>LibreScript</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"><link href="css/sheet.css" rel="stylesheet"></head><body><div style="margin-top:2.5cm;">'+content+'</div><script></script><body/>');
-    setTimeout(() => {
-        result.print();
-        result.close();
-    }, 350);
+    // Result HTML
+    var elementHTML = '<head><title>LibreScript</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"><link href="css/sheet.css" rel="stylesheet"></head><body><div style="margin-top:2.5cm;">'+content+'</div><body/>';
+    const newWindow = window.open();
+
+    // write content to the new window's document.
+    newWindow.document.write(elementHTML);
+
+    // close document to stop writing
+    // otherwise new window may hang
+    newWindow.document.close();
+    
+    // print content in new window as PDF
+    newWindow.print();
+
+    // close the new window after printing
+    newWindow.close();
 }
 
 function saveFile (){
