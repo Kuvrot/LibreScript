@@ -119,21 +119,11 @@ function setFormat (index) {
 function exportPDF () { 
     var content = document.getElementById("result").innerHTML;
     // Result HTML
-    var elementHTML = '<head><title>LibreScript</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"><link href="css/sheet.css" rel="stylesheet"></head><body><div style="margin-top:2.5cm;">'+content+'</div><body/>';
+    var elementHTML = '<head><title>LibreScript</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"><link href="css/sheet.css" rel="stylesheet"></head><body><div style="margin-top:2.5cm;">'+content+'</div><script>window.print();window.close();</script><body/>';
     const newWindow = window.open();
 
     // write content to the new window's document.
     newWindow.document.write(elementHTML);
-
-    // close document to stop writing
-    // otherwise new window may hang
-    newWindow.document.close();
-    
-    // print content in new window as PDF
-    newWindow.print();
-
-    // close the new window after printing
-    newWindow.close();
 }
 
 function saveFile (){
