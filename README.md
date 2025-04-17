@@ -22,7 +22,7 @@ Example of scriptdown:
 ```r
 # 1. room - ext. - day.
 = A character comes into the room and proceeds to talk
--- CHARACTER
+-- character
 _ I am a character, and this is my dialogue.
 ```
 
